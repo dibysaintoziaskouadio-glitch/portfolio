@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    @apply bg-night font-sans text-ink antialiased;
+  }
+  h1, h2, h3 {
+    @apply font-display;
+    text-wrap: balance;
+  }
+  ::selection {
+    background: rgba(255, 255, 255, 0.85);
+    color: #0b0b0c;
+  }
+  :focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+}
+
+@layer components {
+  /* Carte sombre légèrement relevée */
+  .glass {
+    @apply border border-line bg-white/[0.025] backdrop-blur-xl;
+  }
+  /* Carte claire, pour alterner avec les cartes sombres */
+  .card-light {
+    @apply border border-white bg-paper text-night;
+  }
+  /* Halo de lumière douce en haut de section, à la place d'une grille */
+  .spotlight {
+    background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(255, 255, 255, 0.07), transparent 70%);
+  }
+  /* Deuxième ligne d'un titre, plus discrète */
+  .text-dim {
+    @apply font-medium text-ink-muted;
+  }
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.2em] text-ink-muted;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition duration-300;
+  }
+  .btn-primary {
+    @apply btn bg-accent text-night hover:bg-white/85;
+  }
+  .btn-ghost {
+    @apply btn border border-white/25 text-ink hover:border-white hover:bg-white/[0.06];
+  }
+  .section {
+    @apply relative py-24 md:py-32;
+  }
+}
+
+/* Texture de bruit légère sur toute la page */
+.noise::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Le curseur natif est masqué seulement quand le curseur personnalisé est actif */
+html.has-custom-cursor,
+html.has-custom-cursor a,
+html.has-custom-cursor button {
+  cursor: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

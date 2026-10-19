@@ -1,0 +1,58 @@
+---
+title: Comptapilot
+slug: comptapilot
+category: SaaS
+year: 2026
+---
+
+## Contexte
+
+Comptapilot est édité par **Vision Technologie**. Il s'adresse aux cabinets comptables et aux
+services financiers qui calculent chaque mois TVA, paie, amortissements, emprunts et provisions.
+
+## Le problème
+
+Un comptable passe une grande partie de son temps à **recalculer**. Les barèmes changent selon la
+date de l'opération, les arrondis s'accumulent, et une fois le chiffre reporté, plus rien ne montre
+comment il a été obtenu. En cas de contrôle, il faut tout refaire.
+
+## La solution
+
+Le principe tient en une phrase : **le comptable ne calcule plus, il vérifie et il valide.**
+
+Chaque saisie déclenche un moteur de calcul déterministe. Le résultat affiche :
+
+- la formule appliquée et ses étapes chiffrées ;
+- les contrôles de cohérence ;
+- les écritures comptables générées ;
+- les références légales et la version du barème utilisée à la date de l'opération.
+
+Un calcul validé est archivé avec son **empreinte SHA-256** et ne peut plus être supprimé.
+
+### Des chiffres exacts
+
+Tous les calculs passent par `decimal.js` à 28 chiffres significatifs, avec arrondi commercial.
+Aucun nombre flottant n'intervient : `0,1 + 0,2` fait bien `0,3`.
+
+### Des barèmes datés
+
+Les 16 barèmes sont versionnés. Un calcul daté de mars applique le barème en vigueur en mars,
+et l'interface prévient quand une version est à confirmer.
+
+## Résultats
+
+| Indicateur | Valeur |
+|---|---|
+| Formules | 163, dans 13 moteurs |
+| Tests automatisés | 548 |
+| Temps de calcul (médiane) | 0,23 ms |
+| Cas au-delà de 100 ms | 0 |
+
+Chaque exemple de la documentation est rejoué comme test, complété par des tests de propriétés
+(fast-check) qui balaient toutes les options.
+
+## Ce que j'en retiens
+
+Rendre un calcul **explicable** coûte plus cher que le rendre juste, mais c'est ce qui fait gagner
+la confiance du comptable. Une formule visible se vérifie en dix secondes ; un résultat opaque se
+recalcule à la main.
