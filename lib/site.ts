@@ -8,15 +8,17 @@ export const site = {
   location: "Abidjan, Côte d'Ivoire",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://ozias-diby.vercel.app",
   email: "oziassaint3@gmail.com",
+  // Numéro affiché dans la section Contact ; le lien WhatsApp est dans socials.whatsapp
+  phone: "+225 01 50 87 94 76",
   available: true,
   description:
     "Développeur full-stack à Abidjan. Applications web et SaaS pour le marché ivoirien : paiement Mobile Money, connexion par WhatsApp, applications qui fonctionnent hors ligne.",
   // Mots-clés affichés sous le titre du hero
   taglines: ["Web", "SaaS", "Mobile Money", "Hors ligne"],
   socials: {
-    github: "", // ex. "https://github.com/ozias-diby"
+    github: "https://github.com/dibysaintoziaskouadio-glitch",
     linkedin: "",
-    whatsapp: "", // ex. "https://wa.me/2250700000000"
+    whatsapp: "https://wa.me/2250150879476",
     instagram: "",
     x: "",
   },

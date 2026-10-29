@@ -184,20 +184,22 @@ export const projects: Project[] = [
     year: "2026",
     accent: "violet",
     summary:
-      "Explorateur d'hôtels d'Abidjan, du Plateau à Port-Bouët : adresses, contacts et tarifs officiels de Côte d'Ivoire Tourisme, filtres par commune et favoris.",
+      "Annuaire en ligne de 43 hôtels d'Abidjan, du Plateau à Bingerville : adresses, contacts et tarifs officiels de Côte d'Ivoire Tourisme, recherche par commune, dates et budget.",
     context: "Les voyageurs d'affaires et les touristes comparent les hôtels d'Abidjan sur des sites qui mélangent annonces et publicité.",
-    problem: "Les tarifs officiels existent dans un PDF de Côte d'Ivoire Tourisme, peu lisible sur mobile et sans recherche.",
+    problem: "Les tarifs officiels existent dans un PDF de Côte d'Ivoire Tourisme, peu lisible sur mobile et sans recherche. Beaucoup de numéros d'annuaire sont périmés.",
     solution: [
-      "Données extraites de la liste officielle et vérifiées, chaque fiche citant sa source exacte.",
-      "Filtres par commune et par prix, favoris pour les visiteurs inscrits.",
-      "Interface sombre et néon, pensée pour le téléphone.",
+      "Données extraites de la liste officielle, chaque fiche citant sa source exacte.",
+      "Téléphones et e-mails comparés un par un aux sites officiels des hôtels : 18 contacts vérifiés sur 43.",
+      "Recherche façon comparateur : commune, dates, nombre de chambres, budget, total du séjour calculé.",
+      "Référencement Google : données structurées schema.org pour les 43 hôtels, sitemap, aperçu de partage.",
+      "Données des inscrits protégées par des règles d'accès côté serveur, contenus visiteurs échappés à l'affichage.",
     ],
     results: [
-      { value: "29", label: "hôtels référencés" },
-      { value: "16", label: "tarifs officiels vérifiés" },
-      { value: "100 %", label: "des fiches sourcées" },
+      { value: "43", label: "hôtels référencés" },
+      { value: "16", label: "tarifs officiels" },
+      { value: "18", label: "contacts vérifiés sur le site de l'hôtel" },
     ],
-    stack: ["HTML", "CSS", "JavaScript", "Données ouvertes"],
+    stack: ["HTML", "CSS", "JavaScript", "schema.org", "GitHub Pages"],
     gallery: [],
     mock: {
       kicker: "Filtrer par commune",
@@ -207,7 +209,10 @@ export const projects: Project[] = [
         ["Marcory", "Port-Bouët"],
       ],
     },
-    links: {},
+    links: {
+      site: "https://dibysaintoziaskouadio-glitch.github.io/hotels-abidjan/",
+      code: "https://github.com/dibysaintoziaskouadio-glitch/hotels-abidjan",
+    },
   },
 ];
 

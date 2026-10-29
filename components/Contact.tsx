@@ -4,6 +4,7 @@ import { useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { CalendarDays, Check, Copy, Loader2, Mail, MapPin, Send } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa6";
 import Reveal, { SectionHeading } from "./Reveal";
 import SocialLinks from "./SocialLinks";
 import { sendContact, type ContactResult } from "@/app/actions";
@@ -68,6 +69,13 @@ export default function Contact() {
                 </button>
                 <span role="status" className="sr-only">{copied ? "Adresse copiée" : ""}</span>
               </div>
+              {site.socials.whatsapp && (
+                <a href={site.socials.whatsapp} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-3 font-display text-lg font-bold sm:text-xl">
+                  <FaWhatsapp size={20} className="text-accent" aria-hidden="true" />
+                  <span className="select-all group-hover:text-accent">{site.phone}</span>
+                  <span className="text-sm font-normal text-ink-muted">WhatsApp</span>
+                </a>
+              )}
               <p className="flex items-center gap-3 text-ink-muted">
                 <MapPin size={18} aria-hidden="true" /> {site.location}
               </p>
