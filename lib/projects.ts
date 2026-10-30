@@ -61,7 +61,7 @@ export const projects: Project[] = [
       { src: "/images/projets/comptapilot-13-mobile.png", alt: "Comptapilot sur mobile" },
     ],
     mock: { kicker: "Bulletin de paie", headline: "Validé", rows: [["Empreinte", "SHA-256"], ["Barème", "2026-01"]] },
-    links: {},
+    links: { code: "https://github.com/dibysaintoziaskouadio-glitch/comptapilot" },
   },
   {
     slug: "babi-mobilier",
@@ -89,7 +89,11 @@ export const projects: Project[] = [
       { value: "2 min", label: "cycle de rapprochement" },
     ],
     stack: ["Next.js 14", "TypeScript", "Prisma", "PostgreSQL", "Row Level Security", "CinetPay", "WhatsApp Cloud API", "Express", "Vercel"],
-    gallery: [],
+    gallery: [
+      { src: "/images/projets/babi-01-accueil.jpg", alt: "Accueil de Babi Mobilier avec la recherche par pièce, commune et budget" },
+      { src: "/images/projets/babi-02-catalogue.jpg", alt: "Catalogue avec filtres et prix en FCFA" },
+      { src: "/images/projets/babi-03-produit.jpg", alt: "Fiche produit : prix TVA incluse, paiement à la livraison possible" },
+    ],
     mock: {
       kicker: "atelier-kone.babimobilier.ci",
       headline: "385 000 F",
@@ -99,7 +103,7 @@ export const projects: Project[] = [
         ["Acompte Wave 10 %", "38 500 F"],
       ],
     },
-    links: {},
+    links: { code: "https://github.com/dibysaintoziaskouadio-glitch/babi-mobilier" },
   },
   {
     slug: "examprepa-ci",
@@ -127,7 +131,14 @@ export const projects: Project[] = [
       { value: "748", label: "questions de devoirs" },
     ],
     stack: ["NestJS", "Prisma", "PostgreSQL 16", "React", "Vite", "Tailwind CSS", "Dexie / IndexedDB", "PWA", "Docker"],
-    gallery: [],
+    gallery: [
+      { src: "/images/projets/examprepa-01-accueil-eleve.jpg", alt: "Accueil de l'élève : chapitre en cours, objectif et moyenne" },
+      { src: "/images/projets/examprepa-02-matieres.jpg", alt: "Les matières du BEPC et la progression par matière" },
+      { src: "/images/projets/examprepa-04-cours.jpg", alt: "Cours de calcul littéral conforme à la progression DPFC" },
+      { src: "/images/projets/examprepa-05-progres.jpg", alt: "Progression : moyenne pondérée et évolution des notes" },
+      { src: "/images/projets/examprepa-07-enseignant-stats.jpg", alt: "Espace enseignant : statistiques des copies corrigées" },
+      { src: "/images/projets/examprepa-06-mobile.jpg", alt: "ExamPrepa CI sur téléphone" },
+    ],
     mock: {
       kicker: "Devoir · Mathématiques · 3ᵉ",
       headline: "16,5 / 20",
@@ -137,7 +148,7 @@ export const projects: Project[] = [
         ["Chapitre suivant", "Débloqué"],
       ],
     },
-    links: {},
+    links: { code: "https://github.com/dibysaintoziaskouadio-glitch/examprepa-ci" },
   },
   {
     slug: "stock-block",
@@ -164,7 +175,12 @@ export const projects: Project[] = [
       { value: "1", label: "commande pour déployer" },
     ],
     stack: ["React 18", "TypeScript", "shadcn/ui", "TanStack Query", "Zustand", "Recharts", "Express 5", "Prisma", "PostgreSQL 16", "Docker"],
-    gallery: [],
+    gallery: [
+      { src: "/images/projets/stock-01-tableau-de-bord.jpg", alt: "Tableau de bord : valeur du stock, alertes et mouvements" },
+      { src: "/images/projets/stock-02-produits.jpg", alt: "Catalogue produits avec niveaux de stock" },
+      { src: "/images/projets/stock-03-mouvements.jpg", alt: "Historique immuable des entrées, sorties et ajustements" },
+      { src: "/images/projets/stock-04-alertes.jpg", alt: "Alertes de rupture et de stock bas" },
+    ],
     mock: {
       kicker: "Mouvements · aujourd'hui",
       headline: "Seuil atteint",
@@ -174,7 +190,7 @@ export const projects: Project[] = [
         ["Tôle bac alu · 8", "Alerte"],
       ],
     },
-    links: {},
+    links: { code: "https://github.com/dibysaintoziaskouadio-glitch/stock-block" },
   },
   {
     slug: "akwaba-hotels",
@@ -200,7 +216,10 @@ export const projects: Project[] = [
       { value: "18", label: "contacts vérifiés sur le site de l'hôtel" },
     ],
     stack: ["HTML", "CSS", "JavaScript", "schema.org", "GitHub Pages"],
-    gallery: [],
+    gallery: [
+      { src: "/images/projets/akwaba-01-accueil.jpg", alt: "Akwaba Hôtels : recherche par commune, dates et nombre de chambres" },
+      { src: "/images/projets/akwaba-02-resultats.jpg", alt: "Résultats avec tarifs officiels, contacts vérifiés et total du séjour" },
+    ],
     mock: {
       kicker: "Filtrer par commune",
       headline: "Akwaba",
