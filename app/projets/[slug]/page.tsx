@@ -6,7 +6,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
-import { ArrowLeft, Check } from "lucide-react";
+import { ArrowLeft, Check, ExternalLink, Github } from "lucide-react";
 import ProjectVisual from "@/components/ProjectVisual";
 import { getProject, projects } from "@/lib/projects";
 import { accentClasses, cn } from "@/lib/utils";
@@ -110,6 +110,16 @@ export default async function ProjectPage({ params }: { params: { slug: string }
 
         <div className="mt-20 flex flex-wrap gap-3 border-t border-line pt-10">
           <Link href="/#contact" className="btn-primary">Un projet similaire ? Parlons-en</Link>
+          {p.links.site && (
+            <a href={p.links.site} target="_blank" rel="noopener noreferrer" className="btn-ghost">
+              <ExternalLink size={16} /> Voir le site
+            </a>
+          )}
+          {p.links.code && (
+            <a href={p.links.code} target="_blank" rel="noopener noreferrer" className="btn-ghost">
+              <Github size={16} /> Code source
+            </a>
+          )}
           <Link href="/#projets" className="btn-ghost">Voir les autres projets</Link>
         </div>
       </div>
